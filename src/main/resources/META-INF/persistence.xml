@@ -9,9 +9,9 @@
     <properties>
       <!-- Propiedades estándar JDBC (javax.persistence) -->
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://192.168.1.45:5432/postgres"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://direccion_ip/postgres"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>
-      <property name="javax.persistence.jdbc.password" value="tu_contraseña_real"/>
+      <property name="javax.persistence.jdbc.password" value="contraseña"/>
 
       <!-- Propiedades específicas de Hibernate -->
       <property name="hibernate.show_sql" value="true"/>
