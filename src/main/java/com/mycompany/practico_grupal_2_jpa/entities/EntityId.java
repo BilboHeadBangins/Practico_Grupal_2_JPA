@@ -1,0 +1,9 @@
+package com.mycompany.practico_grupal_2_jpa.entities;
+
+/**
+ *
+ * @author italo
+ */
+public abstract class EntityId {
+    protected Long Id;
+}
