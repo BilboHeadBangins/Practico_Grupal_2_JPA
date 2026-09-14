@@ -1,6 +1,8 @@
 
 package com.mycompany.practico_grupal_2_jpa.entities;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -20,18 +22,18 @@ import javax.persistence.Table;
 public class FacturaVenta extends EntityId{
     private Long numero;
     @Column(name="fecha_emision",nullable = false)
-    private Date fechaEmision;
+    private LocalDate fechaEmision;
     @ManyToOne
-    @JoinColumn(name="cliente", nullable = true)
+    @JoinColumn(name="cliente_id", nullable = true)
     private Cliente cliente;
     @ManyToOne
-    @JoinColumn(name="condicion_iva", nullable=false)
+    @JoinColumn(name="condicion_iva_id", nullable=false)
     private CondicionIva condicionIva;
     @ManyToOne
-    @JoinColumn(name="tipo_moneda", nullable=false)
+    @JoinColumn(name="tipo_moneda_id", nullable=false)
     private TipoMoneda tipoMoneda;
     @ManyToOne
-    @JoinColumn(name="punto_venta", nullable=false)
+    @JoinColumn(name="punto_venta_id", nullable=false)
     private PuntoVenta puntoVenta;
 
     private double importeCobrado;
@@ -40,13 +42,13 @@ public class FacturaVenta extends EntityId{
     @Column(name="importe_total", nullable = false)
     private double importeTotal;
     private String cae;
-    private Date caeFechaVencimiento;
+    private LocalDate caeFechaVencimiento;
     private String resultadoAfip;
     private String motivoRechazo;
 
     @Column(name = "estado", nullable = false)
     private String estado;
-    private Date fechaAnulacion;
+    private LocalDate fechaAnulacion;
     private String observaciones;
     
     @OneToMany(mappedBy="factura", cascade=CascadeType.ALL) 
@@ -55,7 +57,10 @@ public class FacturaVenta extends EntityId{
     public FacturaVenta() {
     }
 
-    public FacturaVenta(Long numero, Date fechaEmision, Cliente cliente, CondicionIva condicionIva, TipoMoneda tipoMoneda, PuntoVenta puntoVenta, double importeCobrado, double importeSaldo, double importeTotal, String cae, Date caeFechaVencimiento, String resultadoAfip, String motivoRechazo, String estado, Date fechaAnulacion, String observaciones) {
+    public FacturaVenta(Long numero, LocalDate fechaEmision, Cliente cliente, CondicionIva condicionIva,
+            TipoMoneda tipoMoneda, PuntoVenta puntoVenta, double importeCobrado,
+            double importeSaldo, double importeTotal, String cae, LocalDate caeFechaVencimiento,
+            String resultadoAfip, String motivoRechazo, String estado, LocalDate fechaAnulacion, String observaciones) {
         this.numero = numero;
         this.fechaEmision = fechaEmision;
         this.cliente = cliente;
@@ -82,11 +87,11 @@ public class FacturaVenta extends EntityId{
         this.numero = numero;
     }
 
-    public Date getFechaEmision() {
+    public LocalDate getFechaEmision() {
         return fechaEmision;
     }
 
-    public void setFechaEmision(Date fechaEmision) {
+    public void setFechaEmision(LocalDate fechaEmision) {
         this.fechaEmision = fechaEmision;
     }
 
@@ -154,11 +159,11 @@ public class FacturaVenta extends EntityId{
         this.cae = cae;
     }
 
-    public Date getCaeFechaVencimiento() {
+    public LocalDate getCaeFechaVencimiento() {
         return caeFechaVencimiento;
     }
 
-    public void setCaeFechaVencimiento(Date caeFechaVencimiento) {
+    public void setCaeFechaVencimiento(LocalDate caeFechaVencimiento) {
         this.caeFechaVencimiento = caeFechaVencimiento;
     }
 
@@ -186,11 +191,11 @@ public class FacturaVenta extends EntityId{
         this.estado = estado;
     }
 
-    public Date getFechaAnulacion() {
+    public LocalDate getFechaAnulacion() {
         return fechaAnulacion;
     }
 
-    public void setFechaAnulacion(Date fechaAnulacion) {
+    public void setFechaAnulacion(LocalDate fechaAnulacion) {
         this.fechaAnulacion = fechaAnulacion;
     }
 

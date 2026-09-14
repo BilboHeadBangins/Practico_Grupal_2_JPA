@@ -19,7 +19,7 @@ public abstract class AuditoriaApp extends EntityId{
     @Column(name="fecha_modificacion",nullable = false)
     protected LocalDateTime fechaModificacion;
     @ManyToOne
-    @JoinColumn(name = "usuario_alta", nullable=false)
+    @JoinColumn(name = "usuario_carga", nullable=false)
     protected Usuario usuarioCarga;
     @ManyToOne
     @JoinColumn(name = "usuario_baja")

@@ -19,10 +19,10 @@ public class Cliente extends AuditoriaApp{
     @Column(nullable = false)
     private String denominacion;
     @OneToOne
-    @JoinColumn(name = "contacto", nullable = false)
+    @JoinColumn(name = "contacto_id", nullable = false)
     private Contacto contacto;
     @OneToOne
-    @JoinColumn(name="domicilio", nullable = false)
+    @JoinColumn(name="domicilio_id", nullable = false)
     private Domicilio domicilio;  
 
     public Cliente() {

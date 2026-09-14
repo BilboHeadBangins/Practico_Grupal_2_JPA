@@ -15,10 +15,10 @@ import javax.persistence.Table;
 @Table(name="factura_venta_detalle")        
 public class FacturaVentaDetalle extends EntityId {
     @ManyToOne
-    @JoinColumn(name="factura", nullable = false)
+    @JoinColumn(name="factura_id", nullable = false)
     private FacturaVenta factura;
     @ManyToOne
-    @JoinColumn(name="lista_precio_articulo", nullable = false)
+    @JoinColumn(name="lista_precio_articulo_id", nullable = false)
     private ListaPrecioArticulo listaPrecioArticulo;
     private String descripcion;
     @Column(nullable = false)
@@ -34,7 +34,9 @@ public class FacturaVentaDetalle extends EntityId {
     public FacturaVentaDetalle() {
     }
 
-    public FacturaVentaDetalle(FacturaVenta factura, ListaPrecioArticulo listaPrecioArticulo, String descripcion, double cantidad, double precioUnitario, double porcentajeBonificacion, double importeNeto, double importeIva, double importeSubtotal) {
+    public FacturaVentaDetalle(FacturaVenta factura, ListaPrecioArticulo listaPrecioArticulo, String descripcion,
+            double cantidad, double precioUnitario, double porcentajeBonificacion,
+            double importeNeto, double importeIva, double importeSubtotal) {
         this.factura = factura;
         this.listaPrecioArticulo = listaPrecioArticulo;
         this.descripcion = descripcion;
