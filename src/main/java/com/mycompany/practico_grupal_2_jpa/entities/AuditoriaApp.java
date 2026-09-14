@@ -14,7 +14,7 @@ import javax.persistence.MappedSuperclass;
 public abstract class AuditoriaApp extends EntityId{
     @Column(name="fecha_alta",nullable = false)
     protected LocalDateTime fechaAlta;
-    @Column(name="fecha_baja",nullable = false)
+    @Column(name="fecha_baja")
     protected LocalDateTime fechaBaja;
     @Column(name="fecha_modificacion",nullable = false)
     protected LocalDateTime fechaModificacion;

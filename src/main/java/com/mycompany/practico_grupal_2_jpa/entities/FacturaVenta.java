@@ -3,6 +3,7 @@ package com.mycompany.practico_grupal_2_jpa.entities;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -52,7 +53,7 @@ public class FacturaVenta extends EntityId{
     private String observaciones;
     
     @OneToMany(mappedBy="factura", cascade=CascadeType.ALL) 
-    private List<FacturaVentaDetalle> detalles;
+    private List<FacturaVentaDetalle> detalles = new ArrayList<>();
 
     public FacturaVenta() {
     }
