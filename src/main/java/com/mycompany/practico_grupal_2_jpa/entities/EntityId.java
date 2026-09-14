@@ -14,4 +14,14 @@ public abstract class EntityId {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long Id;
+
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long Id) {
+        this.Id = Id;
+    }
+    
+    
 }
