@@ -20,20 +20,11 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "factura_venta")
-public class FacturaVenta extends EntityId{
+public class FacturaVenta extends AuditoriaApp{
     private Long numero;
     @Column(name="fecha_emision",nullable = false)
     private LocalDate fechaEmision;
-    @ManyToOne
-    @JoinColumn(name="cliente_id", nullable = true)
-    private Cliente cliente;
-    @ManyToOne
-    @JoinColumn(name="condicion_iva_id", nullable=false)
-    private CondicionIva condicionIva;
-    @ManyToOne
-    @JoinColumn(name="tipo_moneda_id", nullable=false)
-    private TipoMoneda tipoMoneda;
-    @ManyToOne
+    
     @JoinColumn(name="punto_venta_id", nullable=false)
     private PuntoVenta puntoVenta;
 
