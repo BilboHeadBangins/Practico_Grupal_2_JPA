@@ -133,10 +133,14 @@ public class Practico_Grupal_2_JPA {
             em.persist(lpa1);
             em.persist(lpa2);
             
-            FacturaVenta facturaventa1 = new FacturaVenta(Long.valueOf("935"),LocalDate.now(),cliente1,civa1,
-                    tipomoneda1, pdv1, 50000.0, 500000.0, 50152.5, "2040322012", LocalDate.now().plusDays(10),
+            //REQUIERE AUDITORIA!!
+            FacturaVenta facturaventa1 = new FacturaVenta(Long.valueOf("935"),LocalDate.now(),
+                    pdv1, 50000.0, 500000.0, 50152.5, "2040322012", LocalDate.now().plusDays(10),
                     "Aprobada", " ", "Aprobada", null, " ");
-            
+            facturaventa1.setFechaAlta(LocalDateTime.now());
+            facturaventa1.setFechaModificacion(lpa1.getFechaAlta());
+            facturaventa1.setUsuarioCarga(usuario1);
+            facturaventa1.setUsuarioModificacion(usuario1);
             
             FacturaVentaDetalle detallefv1 = new FacturaVentaDetalle(facturaventa1,lpa1,"compra realizada en : Carrefour",1.0,
             20000.0,0.0,20000.0,56.0,20056);
