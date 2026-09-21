@@ -49,15 +49,11 @@ public class FacturaVenta extends AuditoriaApp{
     public FacturaVenta() {
     }
 
-    public FacturaVenta(Long numero, LocalDate fechaEmision, Cliente cliente, CondicionIva condicionIva,
-            TipoMoneda tipoMoneda, PuntoVenta puntoVenta, double importeCobrado,
+    public FacturaVenta(Long numero, LocalDate fechaEmision, PuntoVenta puntoVenta, double importeCobrado,
             double importeSaldo, double importeTotal, String cae, LocalDate caeFechaVencimiento,
             String resultadoAfip, String motivoRechazo, String estado, LocalDate fechaAnulacion, String observaciones) {
         this.numero = numero;
         this.fechaEmision = fechaEmision;
-        this.cliente = cliente;
-        this.condicionIva = condicionIva;
-        this.tipoMoneda = tipoMoneda;
         this.puntoVenta = puntoVenta;
         this.importeCobrado = importeCobrado;
         this.importeSaldo = importeSaldo;
@@ -85,30 +81,6 @@ public class FacturaVenta extends AuditoriaApp{
 
     public void setFechaEmision(LocalDate fechaEmision) {
         this.fechaEmision = fechaEmision;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
-    public CondicionIva getCondicionIva() {
-        return condicionIva;
-    }
-
-    public void setCondicionIva(CondicionIva condicionIva) {
-        this.condicionIva = condicionIva;
-    }
-
-    public TipoMoneda getTipoMoneda() {
-        return tipoMoneda;
-    }
-
-    public void setTipoMoneda(TipoMoneda tipoMoneda) {
-        this.tipoMoneda = tipoMoneda;
     }
 
     public PuntoVenta getPuntoVenta() {
