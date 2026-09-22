@@ -147,9 +147,9 @@ public class Practico_Grupal_2_JPA {
             facturaventa1.setUsuarioCarga(usuario1);
             facturaventa1.setUsuarioModificacion(usuario1);
             
-            FacturaVentaDetalle detallefv1 = new FacturaVentaDetalle(facturaventa1,lpa1,"compra realizada en : Carrefour",1.0,
+            FacturaVentaDetalle detallefv1 = new FacturaVentaDetalle(facturaventa1,lpa1,"compra realizada en : Carrefour Minimarket",1.0,
             20000.0,0.0,20000.0,56.0,20056);
-            FacturaVentaDetalle detallefv2 = new FacturaVentaDetalle(facturaventa1,lpa2,"compra realizada en : Carrefour",1.0,
+            FacturaVentaDetalle detallefv2 = new FacturaVentaDetalle(facturaventa1,lpa2,"compra realizada en : Carrefour Minimarket",1.0,
             30000.0,0.0,30000.0,96.5,30096.5);
 
             
@@ -304,17 +304,6 @@ public class Practico_Grupal_2_JPA {
             articulo8.setUsuarioCarga(usuario2);
             articulo8.setUsuarioModificacion(usuario2);
 
-            ListaPrecioArticulo lpa3 = new ListaPrecioArticulo(lp3, 15000.0, articulo3);
-            lpa3.setFechaAlta(LocalDateTime.now().minusHours(18));
-            lpa3.setFechaModificacion(lpa3.getFechaAlta());
-            lpa3.setUsuarioCarga(usuario2);
-            lpa3.setUsuarioModificacion(usuario2);
-
-            ListaPrecioArticulo lpa4 = new ListaPrecioArticulo(lp3, 8000.0, articulo4);
-            lpa4.setFechaAlta(LocalDateTime.now().minusHours(18));
-            lpa4.setFechaModificacion(lpa4.getFechaAlta());
-            lpa4.setUsuarioCarga(usuario2);
-            lpa4.setUsuarioModificacion(usuario2);
 
             ListaPrecioArticulo lpa5 = new ListaPrecioArticulo(lp2, 60000.0, articulo5);
             lpa5.setFechaAlta(LocalDateTime.now().minusHours(15));
@@ -353,24 +342,6 @@ public class Practico_Grupal_2_JPA {
             em.persist(lpa8);
 
             //Facturas extra
-            FacturaVenta facturaventa2 = new FacturaVenta(Long.valueOf("936"), LocalDate.now(),
-                pdv2, 23000.0, 230000.0, 24000.5, "2040322013", LocalDate.now().plusDays(15),
-                "Aprobada", " ", "Aprobada", null, " ");
-            facturaventa2.setFechaAlta(LocalDateTime.now());
-            facturaventa2.setFechaModificacion(facturaventa2.getFechaAlta());
-            facturaventa2.setUsuarioCarga(usuario2);
-            facturaventa2.setUsuarioModificacion(usuario2);
-     
-            FacturaVentaDetalle detallefv3 = new FacturaVentaDetalle(facturaventa2, lpa3,
-                    "compra realizada en : Carrefour Express Centro", 1.0,
-                    15000.0, 0.0, 15000.0, 42.0, 15042.0);
-            FacturaVentaDetalle detallefv4 = new FacturaVentaDetalle(facturaventa2, lpa4,
-                    "compra realizada en : Carrefour Express Centro", 2.0,
-                    8000.0, 0.0, 16000.0, 22.5, 16022.5);
-     
-            facturaventa2.getDetalles().add(detallefv3);
-            facturaventa2.getDetalles().add(detallefv4);
-            em.persist(facturaventa2);
 
             FacturaVenta facturaventa3 = new FacturaVenta(Long.valueOf("937"), LocalDate.now().minusDays(1),
                 pdv1, 60000.0, 600000.0, 66000.0, "2040322014", LocalDate.now().plusDays(20),
